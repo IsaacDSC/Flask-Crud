@@ -1,0 +1,7 @@
+body{
+    background-color: rgba(137, 255, 255, 0.685);
+}
+
+p, label, h1, h2, h3, h4, h5, h6{
+    color: black;
+}

@@ -1,0 +1,44 @@
+{% extends 'layouts/base.html' %}
+{% block content %}
+<div class="container" style="width: 40%; margin: 0px 30%;">
+    <div class="col-md4 col-md-offset-4">
+        <h1 class="card-text text-center">Pagina de Login</h1>
+        <hr>
+        {% if form.errors %}
+        <div class="alert alert-danger" role="alert">
+            {{form.errors}}
+          </div>
+        {% endif %}
+        <form action="" method="POST">
+            {{form.csrf_token}}
+            <div class="row">
+                <div class="form-group mt-2">
+                    <label for="">Username</label>
+                </div>
+                <div class="form-group">
+                    {{form.username(class="form-control", placeholder="Digite seu username")}}
+                </div>
+                <div class="form-group mt-2">
+                    <label for="">Senha</label>
+                </div>
+                <div class="form-group">
+                    {{form.password(class="form-control", placeholder="Digite seu password")}}
+                </div>
+                <div class="form-group mt-2">
+                    <div class="row">
+                        <p>Lembrar-me {{form.remember_me}}</p>
+                    </div>
+                </div>
+            </div>
+            <div class="row mt-3">
+                <div class="col"></div>
+                <div class="col">
+                    <button class="btn btn-primary col-12">Entrar</button>
+                </div>
+                <div class="col"></div>
+            </div>
+        </form>
+    </div>
+</div>
+
+{% endblock %}
